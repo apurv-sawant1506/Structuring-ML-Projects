@@ -1,0 +1,93 @@
+Course contents:
+
+Orthogonalization
+Single number evaluation metric
+Satisficing and optimizing parameters
+Train/dev/test distributions
+how much dataset to split into train and test sets.
+
+-------------------------------------------------------------------------------
+To make our ML project better, we can do a lot of things like:
+
+Better pre-processing of data.
+Finding more training data.
+Hyper-parameter tuning.
+Changing the ML algorithm.
+
+The hyper-parameters are designed in suc ha way that each of the hyper-parameter
+affects only one aspect of the model. Due to this, we can properly fine tune our
+model by carefully changing on the desired hyper-parameters.
+---------------------------------------------------------------------------------
+
+While analyzing the accuracy of classification algorithms, we usually use precision
+and recall scores.
+
+Consider a binary classification problem:
+
+Precision Score --> Out of all the samples that our algorithm classified as "yes",
+how many of the are actually "yes".
+
+Recall Score--> Out of all the samples that our algorithm classified as "no", how
+many of them are actually "no".
+
+So if we build two ML models and the precision score is higher for the first model
+but for second model the recall score is higher, than there rises an ambuguity as
+which algorithm to choose among the two of them.
+
+Therefore it is always advisable to choose only a single metric for evaluation.
+
+A single metric that combines both the precision and recall scores is the F1 Score.
+F1 score is the harmonic mean of precision and recall scores.
+
+
+-----------------------------------------------------------------------------------
+Regression and classification algorithms do not support strings as their input for
+training and prediction.
+
+So always encode the string to numbers before training them.
+
+If you have dates, convert them to Pandas Datetime format using pd.to_datetime()
+
+If you have natural text, convert it to vectors using CountVectorizer() or TfidfVectorizer()
+
+------------------------------------------------------------------------------------
+Satisficing and optimizing parameters:
+
+Accuracy and Running time , we will choose accuracy as optimizing paramter and 
+running time as the satisficing paramter.
+-------------------------------------------------------------------------------------
+
+Both your train set and test set/dev set should have data from the entire distribution
+of data and not just from one part of the data.
+--------------------------------------------------------------------------------------
+
+In earlier days, the datasets were very small hence splitting the data into 80% training
+set and 20% testing set was quite resonable.
+
+But today, datasets contain millions of entries. So now it is better to split 98% as
+training data and 2% as testing data, since 2% of even 1 million entires is 20,000 
+which is enough for training set.
+---------------------------------------------------------------------------------------
+Always use the same type of data that your users will be using.
+
+Eg: if you are building a cat image classifier, and your modelling data and testing data
+consists of very high resolution images and is doing very well but users are generally 
+uploading low resolution images, then they may not get the results with same accuracy as
+you are getting.
+---------------------------------------------------------------------------------------- 
+
+No matter how much better you build a system, it'll never be 100% accurate.
+There will always be a small amount of error in the system.
+This error is called bayes optimal error.
+
+----------------------------------------------------------------------------------------
+Areas where ML algorithms have surpassed human level performance:
+
+Online advertising (Predicting how likely someone is to click on a particular ad).
+Load Approval.
+Product Recommendations.
+
+----------------------------------------------------------------------------------------
+Humans tend to do better than ML algorithms when it comes to unsupervised learning.
+
+-----------------------------------------------------------------------------------------
